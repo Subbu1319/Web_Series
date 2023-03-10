@@ -1,0 +1,58 @@
+{
+  "series": [
+    {
+      "id": 1,
+      "image":"../assets/naruto.jpg",
+      "Series_name": "Naruto",
+      "Streaming_Partner": "Netflix",
+      "director": "Tom Bruns",
+      "seasons": "8",
+      "ep_count": "137",
+      "genre": "Manga Anime",
+      "imdb_rating": "9.3/10",
+      "desc": "Naruto's journey of being a hokage",
+      "airing_date": "November 11,2022"
+    },
+    {
+      "id": 2,
+      "image": "../assets/wednesday.webp",
+      "Series_name": "wednesday",
+      "Streaming_Partner": "Netflix",
+      "director": "ishqifa",
+      "seasons": 1,
+      "ep_count": 20,
+      "genre": "Thriller comedy",
+      "imdb_rating": "8.9/10",
+      "desc": "During a visit to his motherland, a Korean-Italian mafia lawyer gives an unrivaled conglomerate a taste of its own medicine with a side of justice.",
+      "airing_date": "Febraury-20 2021"
+    },
+    {
+      "id": 3,
+      "image": "../assets/Vadhandhi.jpg",
+      "Series_name": "Vadhandhi",
+      "Streaming_Partner": "Amazon Prime",
+      "director": "Tamizh",
+      "seasons": 1,
+      "ep_count": 20,
+      "episode_length": "1hr 30mins",
+      "genre": "Action Thriller",
+      "imdb_rating": "8.4/10",
+      "desc": "During a visit to his motherland, a Korean-Italian mafia lawyer gives an unrivaled conglomerate a taste of its own medicine with a side of justice.",
+      "airing_date": "Febraury-20 2021"
+    },
+    {
+      "id": 4,
+      "image": "../assets/Vincenzo.jpg",
+      "Series_name": "Vincenzo",
+      "Streaming_Partner": "Netflix",
+      "director": "Kim Hee Won",
+      "seasons": 1,
+      "ep_count": 20,
+      "episode_length": "1hr 30mins",
+      "genre": "Korean Thriller Drama",
+      "imdb_rating": "8.4/10",
+      "desc": "During a visit to his motherland, a Korean-Italian mafia lawyer gives an unrivaled conglomerate a taste of its own medicine with a side of justice.",
+      "airing_date": "Febraury-20 2021"
+    }
+  ]
+}

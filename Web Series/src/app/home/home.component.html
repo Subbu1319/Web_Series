@@ -1,0 +1,161 @@
+<!-- <nav style="background-color:goldenrod;" class="navbar navbar-light background-color:goldenrod">
+    <div class="container-fluid">
+        
+        <h1 style="color: rgb(139, 43, 43);">Trending Series</h1>
+        <div class="d-flex ">
+                    <div style="background-color: black;"class="select-arrow medium prefix globe">
+                        <select tabindex="0" placeholder="lang-switcher" text-red>
+                         <option selected="" lang="en" value="/in/" data-language="en" data-country="IN">English</option>
+                        <option lang="hi" value="/in-hi/" data-language="hi" data-country="IN">हिन्दी</option> 
+                        <option type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">English</option>
+                        <option type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">हिन्दी</option>
+                        <option type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">தமிழ்</option>
+                        </select>
+                    </div>
+        </div>
+                
+        <div class="d-flex">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Series</button>
+        </div>
+    </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black;">
+    <div class="container-fluid">
+        <img [src]="img" width="50" height="50" />
+        <a class="navbar-brand text-brown mx-3" href="#">Trending</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-red" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#">Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-red" href="#">Streaming_Partner</a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+        <div class="d-flex mx-3">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+
+
+
+        <div class="d-flex">
+            <button type="button" (click)="clickAddweb_series()" class="btn btn-outline-light" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Add Series</button>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="grid-container">
+        <div (click)="fetchweb_series(web)" *ngFor="let web of web_series">
+            <br>
+            <div class="grid-item">
+                <img [src]="web.image" alt="image" width="200" height="200" />
+                <br><br>
+
+                <button type="button" (click)="editweb_series(web)" class="btn btn-success mx-4" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Edit</button>
+                <button type="button" (click)="deleteweb_series(web)"  class="btn btn-danger">Delete</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Series Info</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Image</label>
+                        <input type="text" class="form-control" formControlName="image"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Series Name</label>
+                        <input type="text" class="form-control" formControlName="Series_name"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Streaming Partner</label>
+                        <input type="text" class="form-control" formControlName="Streaming_Partner"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Director</label>
+                        <input type="text" class="form-control" formControlName="director" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Seasons</label>
+                        <input type="text" class="form-control" formControlName="seasons" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Episode Count</label>
+                        <input type="text" class="form-control" formControlName="ep_count" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Genre</label>
+                        <input type="text" class="form-control" formControlName="genre" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">IMDB rating</label>
+                        <input type="text" class="form-control" formControlName="imdb_rating"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Description</label>
+                        <input type="text" class="form-control" formControlName="desc" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Airing Date</label>
+                        <input type="text" class="form-control" formControlName="airing_date"
+                            id="exampleInputPassword1">
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAdd" (click)="postseriesDetails()" class="btn btn-success">Add
+                    Series</button>
+                <button type="button" *ngIf="showUpdate" (click)="updateweb_series()" class="btn btn-primary">Update
+                    Details</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
